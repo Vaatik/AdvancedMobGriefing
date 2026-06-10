@@ -9,7 +9,7 @@ Disable block destruction for specific mobs without affecting others — an alte
 [![SpigotMC](https://img.shields.io/badge/Platform-Spigot%20%7C%20Paper-yellow)](https://papermc.io/)
 
 > [!TIP]
-> It's better to use ![Vanilla Tweaks](https://vanillatweaks.net/picker/datapacks/) datapacks: Gameplay Changes > Anti Creeper Grief / Anti Enderman Grief / Anti Ghast Grief.
+> It's better to use [Vanilla Tweaks](https://vanillatweaks.net/picker/datapacks/) datapacks: Gameplay Changes > Anti Creeper Grief / Anti Enderman Grief / Anti Ghast Grief.
 
 ---
 
