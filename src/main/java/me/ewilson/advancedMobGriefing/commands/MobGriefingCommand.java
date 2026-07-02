@@ -6,18 +6,16 @@ import me.ewilson.advancedMobGriefing.utils.ConfigHandler;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class MobGriefingCommand implements CommandExecutor, TabExecutor {
+public class MobGriefingCommand implements TabExecutor {
 
     private final String GRIEF_CONFIG_ROOT = "can-grief";
     private final String[] AVAILABLE_ENTITY_TYPES = {
@@ -50,8 +48,8 @@ public class MobGriefingCommand implements CommandExecutor, TabExecutor {
     public List<String> onTabComplete(CommandSender commandSender, Command command, String label, String[] args) {
         return switch (args.length) {
             case 1 -> Arrays.asList(this.AVAILABLE_ENTITY_TYPES);
-            case 2 -> Arrays.asList("true", "false");
-            default -> new ArrayList<String>();
+            case 2 -> List.of("true", "false");
+            default -> List.of();
         };
     }
 
@@ -106,13 +104,11 @@ public class MobGriefingCommand implements CommandExecutor, TabExecutor {
     private void printMessage(String message, CommandSender commandSender) {
         if (commandSender instanceof Player player)
             player.sendMessage(message);
-        return;
     }
 
     private void printErrorMessage(String message, CommandSender commandSender) {
         if (commandSender instanceof Player player)
             player.sendMessage(ChatColor.RED + message);
-        return;
     }
 
     private boolean isValueExist(String[] args, FileConfiguration config) {
@@ -142,8 +138,6 @@ public class MobGriefingCommand implements CommandExecutor, TabExecutor {
 
         config.set(configurationPath, Boolean.parseBoolean(isEnabled));
         this.PLUGIN.saveConfig();
-
-        return;
     }
 
     private String getEntityConfigurationPath(String entityType) {

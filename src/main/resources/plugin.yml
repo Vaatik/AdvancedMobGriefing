@@ -1,7 +1,7 @@
 name: AdvancedMobGriefing
 version: '1.0.2'
 main: me.ewilson.advancedMobGriefing.AdvancedMobGriefing
-api-version: '1.20'
+api-version: '1.21'
 prefix: AdvancedMobGriefing
 authors: [ _Ewilson_ ]
 description: A plugin that allows you to disable griefing for selected mobs.

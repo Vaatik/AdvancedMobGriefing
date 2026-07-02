@@ -23,14 +23,12 @@ public class GriefingListener implements Listener {
     public void onEntityExplode(EntityExplodeEvent event) {
         if (!canGrief(event.getEntityType()))
             event.blockList().clear();
-        return;
     }
 
     @EventHandler
     public void onEntityChangeBlock(EntityChangeBlockEvent event) {
         if (!canGrief(event.getEntityType()))
             event.setCancelled(true);
-        return;
     }
 
     private boolean canGrief(EntityType entityType) {
